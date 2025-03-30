@@ -274,6 +274,12 @@ dialog::backdrop {
   font-size: 1.25rem;
 }
 
+.feature-section__article-link {
+  &:hover {
+    color: var(--clr-soft-red);
+  }
+}
+
 .feature-section__content::before {
   counter-increment: feature-section-item;
   content: "0" counter(feature-section-item);
