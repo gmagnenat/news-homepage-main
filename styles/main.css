@@ -120,6 +120,21 @@ a {
 
 .main-navigation {
   display: none;
+
+  @media screen and (min-width: 69rem) {
+    display: flex;
+  }
+}
+
+.main-navigation__list {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.main-navigation__link {
+  &:hover {
+    color: var(--clr-soft-red);
+  }
 }
 
 .mobile-navigation {
@@ -128,6 +143,10 @@ a {
   overflow-y: auto;
   width: 16rem;
   min-height: 100vh;
+
+  @media screen and (min-width: 69rem) {
+    display: none;
+  }
 }
 
 .mobile-navigation--open {
@@ -140,6 +159,10 @@ a {
   border: transparent;
   background: none;
   cursor: pointer;
+
+  @media screen and (min-width: 69rem) {
+    display: none;
+  }
 }
 
 .close-navigation {
