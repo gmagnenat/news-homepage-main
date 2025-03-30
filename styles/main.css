@@ -84,13 +84,19 @@ html {
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--clr-off-white);
+  color: var(--clr-very-dark-blue);
   padding: 1rem;
+  line-height: 1.5;
 }
 
 main,
 header {
   max-width: 69rem;
   margin-inline: auto;
+}
+
+p {
+  color: var(--clr-dark-grayish-blue);
 }
 
 ul {
@@ -145,6 +151,51 @@ dialog::backdrop {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+/* ----------------------------------------------- */
+/* --------------- Hero section ------------------ */
+/* ----------------------------------------------- */
+.hero {
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.hero__title {
+  font-size: 3.125rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero p {
+  line-height: 1.73;
+}
+
+.hero__btn {
+  align-self: flex-start;
+}
+
+/* ----------------------------------------------- */
+/* --------------- Utility classes --------------- */
+/* ----------------------------------------------- */
+.btn {
+  padding: 0.875rem 2rem;
+  background-color: var(--clr-soft-red);
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 4.5px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--clr-very-dark-blue);
+    color: var(--clr-off-white);
+  }
 }
 
 .scroll-locked {

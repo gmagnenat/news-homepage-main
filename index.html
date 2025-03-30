@@ -80,20 +80,26 @@
 
     <main class="main">
       <section class="hero">
-        <picture>
+        <picture class="hero__image">
           <source
             srcset="assets/images/image-web-3-desktop.jpg"
             media="(min-width:48rem)"
           />
           <img src="assets/images/image-web-3-mobile.jpg" alt="" />
         </picture>
-        <h1 id="hero-title">The Bright Future of Web 3.0?</h1>
-        <p>
-          We dive into the next evolution of the web that claims to put the
-          power of the platforms back into the hands of the people. But is it
-          really fulfilling its promise?
-        </p>
-        <a aria-describedby="hero-title" href="#">Read more</a>
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title">
+            The Bright Future of Web 3.0?
+          </h1>
+          <p class="hero__body">
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+          <a class="btn hero__btn" aria-describedby="hero-title" href="#"
+            >Read more</a
+          >
+        </div>
       </section>
       <section class="news-section">
         <h2 class="news-section__title">New</h2>
