@@ -163,9 +163,24 @@ dialog::backdrop {
 }
 
 /* ----------------------------------------------- */
+/* --------------- main grid ------------------ */
+/* ----------------------------------------------- */
+.main {
+  @media screen and (min-width: 69rem) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "hero hero news"
+      "hero hero news"
+      "features features features";
+    gap: 2rem;
+  }
+}
+
 /* --------------- Hero section ------------------ */
 /* ----------------------------------------------- */
 .hero {
+  grid-area: hero;
 }
 
 .hero__content {
@@ -193,9 +208,14 @@ dialog::backdrop {
 /* --------------- News section ------------------ */
 /* ----------------------------------------------- */
 .news-section {
+  grid-area: news;
   background-color: var(--clr-very-dark-blue);
   padding: 1.5rem 1.3rem;
   margin-top: 4rem;
+
+  @media screen and (min-width: 69rem) {
+    margin-top: 0;
+  }
 }
 
 .news-section__title {
@@ -241,6 +261,7 @@ dialog::backdrop {
 /* --------------- Feature section --------------- */
 /* ----------------------------------------------- */
 .feature-section {
+  grid-area: features;
   counter-reset: feature-section-item;
   margin-top: 4rem;
 }
@@ -250,6 +271,12 @@ dialog::backdrop {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media screen and (min-width: 69rem) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
 
 .feature-section__list-item {
