@@ -287,11 +287,14 @@ dialog::backdrop {
 /* ----------------------------------------------- */
 .btn {
   padding: 0.875rem 2rem;
-  background-color: var(--clr-soft-red);
   display: inline-block;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 4.5px;
+}
+
+.btn--primary {
+  background-color: var(--clr-soft-red);
   transition: all 0.2s ease-in-out;
 
   &:hover {
