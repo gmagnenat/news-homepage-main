@@ -130,6 +130,12 @@ a {
   min-height: 100vh;
 }
 
+.mobile-navigation--open {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .open-navigation {
   border: transparent;
   background: none;
@@ -137,6 +143,9 @@ a {
 }
 
 .close-navigation {
+  background: none;
+  border: transparent;
+  margin-left: auto;
   svg {
     pointer-events: none;
   }
