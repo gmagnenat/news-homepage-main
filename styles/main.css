@@ -1,0 +1,310 @@
+:root {
+  --clr-soft-orange: hsl(35, 77%, 62%);
+  --clr-soft-red: hsl(5, 85%, 63%);
+  --clr-off-white: hsl(36, 100%, 99%);
+  --clr-grayish-blue: hsl(233, 8%, 79%);
+  --clr-dark-grayish-blue: hsl(236, 13%, 42%);
+  --clr-very-dark-blue: hsl(240, 100%, 5%);
+
+  --fs-body: 0.9375rem;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+html {
+  font-size: var(--fs-body);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--clr-off-white);
+  color: var(--clr-very-dark-blue);
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+main,
+header {
+  max-width: 69rem;
+  margin-inline: auto;
+}
+
+p {
+  color: var(--clr-dark-grayish-blue);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-block: 1.75rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-navigation {
+  display: none;
+}
+
+.mobile-navigation {
+  border: none;
+  margin-left: auto;
+  overflow-y: auto;
+  width: 16rem;
+  min-height: 100vh;
+}
+
+.open-navigation {
+  border: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+.close-navigation {
+  svg {
+    pointer-events: none;
+  }
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.mobile-navigation__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ----------------------------------------------- */
+/* --------------- Hero section ------------------ */
+/* ----------------------------------------------- */
+.hero {
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.hero__title {
+  font-size: 3.125rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero p {
+  line-height: 1.73;
+}
+
+.hero__btn {
+  align-self: flex-start;
+}
+
+/* ----------------------------------------------- */
+/* --------------- News section ------------------ */
+/* ----------------------------------------------- */
+.news-section {
+  background-color: var(--clr-very-dark-blue);
+  padding: 1.5rem 1.3rem;
+  margin-top: 4rem;
+}
+
+.news-section__title {
+  font-size: 2rem;
+  color: var(--clr-soft-orange);
+}
+
+.news-section__list {
+  margin-top: 2.1875rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-section__list-item {
+  padding-block: 1.8125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.news-section__list-item:first-child {
+  padding-top: 0;
+}
+
+.news-section__list-item:last-child {
+  padding-bottom: 0;
+}
+
+.news-section__list-item:not(:last-child) {
+  border-bottom: 1px solid var(--clr-dark-grayish-blue);
+}
+
+.news-section__article-title {
+  font-size: 1.25rem;
+  color: var(--clr-off-white);
+}
+
+.news-section__article-intro {
+  color: var(--clr-grayish-blue);
+}
+
+/* ----------------------------------------------- */
+/* --------------- Feature section --------------- */
+/* ----------------------------------------------- */
+.feature-section {
+  counter-reset: feature-section-item;
+  margin-top: 4rem;
+}
+
+.feature-section__list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.feature-section__list-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+}
+
+.feature-section__article-image {
+  width: 100px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-section__article-title {
+  font-size: 1.25rem;
+}
+
+.feature-section__content::before {
+  counter-increment: feature-section-item;
+  content: "0" counter(feature-section-item);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--clr-soft-red);
+}
+
+.feature-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ----------------------------------------------- */
+/* --------------- Utility classes --------------- */
+/* ----------------------------------------------- */
+.btn {
+  padding: 0.875rem 2rem;
+  background-color: var(--clr-soft-red);
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 4.5px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--clr-very-dark-blue);
+    color: var(--clr-off-white);
+  }
+}
+
+.scroll-locked {
+  overflow: hidden;
+}
+
+*:focus {
+  outline-style: dashed;
+  outline-width: 2px;
+  outline-color: var(--clr-soft-orange);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+}
