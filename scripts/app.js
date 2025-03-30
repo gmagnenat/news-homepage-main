@@ -50,6 +50,7 @@ function handleKeyDown(e) {
 }
 
 function openMobileNavigation() {
+  mobileNavigation.classList.add("mobile-navigation--open");
   mobileNavigation.showModal();
   body.classList.add("scroll-locked");
   const firstFocusable = mobileNavigation.querySelector(
@@ -61,6 +62,7 @@ function openMobileNavigation() {
 function closeMobileNavigation() {
   mobileNavigation.close();
   body.classList.remove("scroll-locked");
+  mobileNavigation.classList.remove("mobile-navigation--open");
 }
 
 function init() {
