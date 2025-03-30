@@ -186,6 +186,7 @@ dialog::backdrop {
 .news-section {
   background-color: var(--clr-very-dark-blue);
   padding: 1.5rem 1.3rem;
+  margin-top: 4rem;
 }
 
 .news-section__title {
@@ -232,6 +233,7 @@ dialog::backdrop {
 /* ----------------------------------------------- */
 .feature-section {
   counter-reset: feature-section-item;
+  margin-top: 4rem;
 }
 
 .feature-section__list {
