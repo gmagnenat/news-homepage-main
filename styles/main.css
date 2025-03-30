@@ -233,6 +233,12 @@ dialog::backdrop {
   color: var(--clr-off-white);
 }
 
+.news-section__article-link {
+  &:hover {
+    color: var(--clr-soft-orange);
+  }
+}
+
 .news-section__article-intro {
   color: var(--clr-grayish-blue);
 }
