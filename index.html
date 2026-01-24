@@ -4,6 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentor | News homepage</title>
+    <meta
+      name="description"
+      content="News homepage - A Frontend Mentor challenge solution by @gmagnenat"
+    />
+    <meta name="author" content="Gwenaël Magnenat" />
+    <link rel="canonical" href="https://deluxe-cat-9a74f2.netlify.app/" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Frontend Mentor | News homepage" />
+    <meta
+      property="og:description"
+      content="News homepage - A Frontend Mentor challenge solution by @gmagnenat"
+    />
+    <meta property="og:url" content="https://deluxe-cat-9a74f2.netlify.app/" />
+    <meta
+      property="og:image"
+      content="https://deluxe-cat-9a74f2.netlify.app/assets/images/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Colorful geometric blocks illustration used as the hero image."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frontend Mentor | News homepage" />
+    <meta
+      name="twitter:description"
+      content="News homepage - A Frontend Mentor challenge solution by @gmagnenat"
+    />
+    <meta
+      name="twitter:image"
+      content="https://deluxe-cat-9a74f2.netlify.app/assets/images/og-image.png"
+    />
+    <meta name="theme-color" content="#fffdfa" />
     <link
       rel="icon"
       type="image/png"
@@ -11,6 +46,22 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/image-web-3-mobile.webp"
+      type="image/webp"
+      media="(max-width: 47.99rem)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/image-web-3-desktop.webp"
+      type="image/webp"
+      media="(min-width: 48rem)"
+      fetchpriority="high"
+    />
     <style>
       @font-face {
         font-family: "Inter";
@@ -104,8 +155,17 @@
       <section class="hero">
         <picture class="hero__image">
           <source
+            srcset="assets/images/image-web-3-desktop.webp"
+            type="image/webp"
+            media="(min-width:48rem)"
+          />
+          <source
             srcset="assets/images/image-web-3-desktop.jpg"
             media="(min-width:48rem)"
+          />
+          <source
+            srcset="assets/images/image-web-3-mobile.webp"
+            type="image/webp"
           />
           <img
             src="assets/images/image-web-3-mobile.jpg"
@@ -174,11 +234,17 @@
         </h2>
         <ol class="feature-section__list">
           <li class="feature-section__list-item">
-            <img
-              class="feature-section__article-image"
-              src="assets/images/image-retro-pcs.jpg"
-              alt=""
-            />
+            <picture>
+              <source
+                srcset="assets/images/image-retro-pcs.webp"
+                type="image/webp"
+              />
+              <img
+                class="feature-section__article-image"
+                src="assets/images/image-retro-pcs.jpg"
+                alt=""
+              />
+            </picture>
             <div class="feature-section__content">
               <span class="feature-section__index" aria-hidden="true"></span>
               <h3 class="feature-section__article-title">
@@ -190,11 +256,17 @@
             </div>
           </li>
           <li class="feature-section__list-item">
-            <img
-              class="feature-section__article-image"
-              src="assets/images/image-top-laptops.jpg"
-              alt=""
-            />
+            <picture>
+              <source
+                srcset="assets/images/image-top-laptops.webp"
+                type="image/webp"
+              />
+              <img
+                class="feature-section__article-image"
+                src="assets/images/image-top-laptops.jpg"
+                alt=""
+              />
+            </picture>
             <div class="feature-section__content">
               <span class="feature-section__index" aria-hidden="true"></span>
               <h3 class="feature-section__article-title">
@@ -206,11 +278,17 @@
             </div>
           </li>
           <li class="feature-section__list-item">
-            <img
-              class="feature-section__article-image"
-              src="assets/images/image-gaming-growth.jpg"
-              alt=""
-            />
+            <picture>
+              <source
+                srcset="assets/images/image-gaming-growth.webp"
+                type="image/webp"
+              />
+              <img
+                class="feature-section__article-image"
+                src="assets/images/image-gaming-growth.jpg"
+                alt=""
+              />
+            </picture>
             <div class="feature-section__content">
               <span class="feature-section__index" aria-hidden="true"></span>
               <h3 class="feature-section__article-title">
