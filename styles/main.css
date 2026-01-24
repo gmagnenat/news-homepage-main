@@ -5,6 +5,8 @@
   --clr-grayish-blue: hsl(233, 8%, 79%);
   --clr-dark-grayish-blue: hsl(236, 13%, 42%);
   --clr-very-dark-blue: hsl(240, 100%, 5%);
+  --spacing-large: 5rem;
+  --spacing-small: 0.8rem;
 
   --fs-body: 0.9375rem;
 }
@@ -64,6 +66,7 @@ h6 {
 /* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
+  color: var(--clr-dark-grayish-blue);
 }
 h1,
 h2,
@@ -94,10 +97,6 @@ header {
 
 main {
   flex: 1;
-}
-
-p {
-  color: var(--clr-dark-grayish-blue);
 }
 
 ul {
@@ -151,7 +150,7 @@ a {
 }
 
 .mobile-navigation__list {
-  margin-block-start: 5rem;
+  margin-block-start: var(--spacing-large);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -192,8 +191,8 @@ dialog::backdrop {
 }
 
 .mobile-navigation__list {
-  margin-block-start: 5rem;
-  padding-inline: 0.8rem;
+  margin-block-start: var(--spacing-large);
+  padding-inline: var(--spacing-small);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -408,7 +407,7 @@ dialog::backdrop {
   display: inline-block;
   text-transform: uppercase;
   font-weight: 800;
-  letter-spacing: 4.5px;
+  letter-spacing: 0.28em;
 }
 
 .btn--primary {
@@ -423,7 +422,7 @@ dialog::backdrop {
 
 @media (prefers-reduced-motion: reduce) {
   * {
-    transition: none !important; /* Remove all transitions */
+    transition: none;
   }
 }
 
