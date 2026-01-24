@@ -35,6 +35,14 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  font-family: "Inter", sans-serif;
+  background-color: var(--clr-off-white);
+  color: var(--clr-very-dark-blue);
+  padding: 1rem;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 6. Improve media defaults */
@@ -81,6 +89,11 @@ main,
 header {
   max-width: 69.5rem;
   margin-inline: auto;
+  width: 100%;
+}
+
+main {
+  flex: 1;
 }
 
 p {
@@ -129,7 +142,7 @@ a {
   border: none;
   margin-left: auto;
   overflow-y: auto;
-  width: 16rem;
+  min-width: 16rem;
   min-height: 100vh;
   position: fixed;
   top: 0;
@@ -140,6 +153,17 @@ a {
   @media screen and (min-width: 69rem) {
     display: none;
   }
+}
+
+.mobile-navigation__list {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-navigation__list-item {
+  font-size: 1.125rem;
 }
 
 .mobile-navigation--open {
@@ -189,8 +213,8 @@ dialog::backdrop {
     margin-top: 2.2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
     grid-template-areas:
-      "hero hero news"
       "hero hero news"
       "features features features";
     gap: 2rem;
