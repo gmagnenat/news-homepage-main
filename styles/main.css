@@ -9,15 +9,17 @@
   --fs-body: 0.9375rem;
 }
 
+/* ----------------------------------------------- */
+/* --------------- CSS Reset ------------------ */
+/* ----------------------------------------------- */
+
 /* 1. Use a more-intuitive box-sizing model */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 /* 2. Remove default margin */
-* {
+*:not(dialog) {
   margin: 0;
 }
 
@@ -36,31 +38,18 @@ body {
 }
 
 /* 6. Improve media defaults */
-img,
-picture,
-video,
-canvas,
-svg {
+img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input,
-button,
-textarea,
-select {
+input, button, textarea, select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
@@ -68,17 +57,15 @@ h6 {
 p {
   text-wrap: pretty;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
-html {
-  font-size: var(--fs-body);
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
 }
 
 body {
@@ -87,11 +74,12 @@ body {
   color: var(--clr-very-dark-blue);
   padding: 1rem;
   line-height: 1.5;
+  font-size: var(--fs-body);
 }
 
 main,
 header {
-  max-width: 69rem;
+  max-width: 69.5rem;
   margin-inline: auto;
 }
 
@@ -143,6 +131,11 @@ a {
   overflow-y: auto;
   width: 16rem;
   min-height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
 
   @media screen and (min-width: 69rem) {
     display: none;
@@ -180,6 +173,8 @@ dialog::backdrop {
 }
 
 .mobile-navigation__list {
+  margin-top: 5rem;
+  padding-inline: 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -189,7 +184,9 @@ dialog::backdrop {
 /* --------------- main grid ------------------ */
 /* ----------------------------------------------- */
 .main {
+  
   @media screen and (min-width: 69rem) {
+    margin-top: 2.2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
@@ -221,7 +218,7 @@ dialog::backdrop {
     padding-block: 0;
     margin-top: 1.875rem;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto;
     grid-template-areas:
       "title body"
       "title button";
@@ -230,9 +227,9 @@ dialog::backdrop {
 
 .hero__title {
   grid-area: title;
-  font-size: 3.125rem;
+  font-size: 3.4375rem;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .hero__body {
@@ -241,6 +238,7 @@ dialog::backdrop {
 }
 
 .hero__btn {
+  margin-top: 1.5rem;
   grid-area: button;
   align-self: flex-start;
 
@@ -270,13 +268,13 @@ dialog::backdrop {
 }
 
 .news-section__list {
-  margin-top: 2.1875rem;
+  margin-top: 1.1875rem;
   display: flex;
   flex-direction: column;
 }
 
 .news-section__list-item {
-  padding-block: 1.8125rem;
+  padding-block: 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -295,7 +293,7 @@ dialog::backdrop {
 }
 
 .news-section__article-title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--clr-off-white);
 }
 
@@ -315,11 +313,13 @@ dialog::backdrop {
 .feature-section {
   grid-area: features;
   counter-reset: feature-section-item;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .feature-section__list {
   padding: 0;
+  margin: 0;
+  list-style: none;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -332,9 +332,10 @@ dialog::backdrop {
 }
 
 .feature-section__list-item {
+  counter-increment: feature-section-item;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1rem;
+  gap: 1.3rem;
 }
 
 .feature-section__article-image {
@@ -344,7 +345,7 @@ dialog::backdrop {
 }
 
 .feature-section__article-title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .feature-section__article-link {
@@ -353,15 +354,16 @@ dialog::backdrop {
   }
 }
 
-.feature-section__content::before {
-  counter-increment: feature-section-item;
+.feature-section__index::before {
   content: "0" counter(feature-section-item);
   font-size: 2rem;
+  line-height: 1;
   font-weight: 800;
   color: var(--clr-soft-red);
 }
 
 .feature-section__content {
+  line-height: 1.7;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
