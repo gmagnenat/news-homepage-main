@@ -4,10 +4,10 @@ const closeNavigationBtn = document.querySelector(".close-navigation");
 const body = document.querySelector("body");
 
 function setupEventListeners() {
-  openNavigationBtn.addEventListener("click", openMobileNavigation);
-  closeNavigationBtn.addEventListener("click", closeMobileNavigation);
-  mobileNavigation.addEventListener("keydown", handleKeyDown);
-  mobileNavigation.addEventListener("click", handleDialogClick);
+  openNavigationBtn?.addEventListener("click", openMobileNavigation);
+  closeNavigationBtn?.addEventListener("click", closeMobileNavigation);
+  mobileNavigation?.addEventListener("keydown", handleKeyDown);
+  mobileNavigation?.addEventListener("click", handleDialogClick);
 }
 
 function handleDialogClick(e) {
@@ -31,7 +31,7 @@ function handleKeyDown(e) {
   if (e.key !== "Tab") return;
 
   const focusableElements = mobileNavigation.querySelectorAll(
-    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
   );
   const firstFocusable = focusableElements[0];
   const lastFocusable = focusableElements[focusableElements.length - 1];
@@ -50,13 +50,17 @@ function handleKeyDown(e) {
 }
 
 function openMobileNavigation() {
-  mobileNavigation.classList.add("mobile-navigation--open");
-  mobileNavigation.showModal();
-  body.classList.add("scroll-locked");
-  const firstFocusable = mobileNavigation.querySelector(
-    "a[href], button:not([disabled])"
-  );
-  if (firstFocusable) firstFocusable.focus();
+  if (mobileNavigation && mobileNavigation instanceof HTMLDialogElement) {
+    mobileNavigation.classList.add("mobile-navigation--open");
+    mobileNavigation.showModal();
+    body.classList.add("scroll-locked");
+    const firstFocusable = mobileNavigation.querySelector(
+      "a[href], button:not([disabled])",
+    );
+    if (firstFocusable) firstFocusable.focus();
+  } else {
+    console.error("Mobile navigation is missing or invalid");
+  }
 }
 
 function closeMobileNavigation() {
