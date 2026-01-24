@@ -216,6 +216,19 @@ dialog::backdrop {
 
 .hero__image {
   width: 100%;
+  aspect-ratio: 686 / 600;
+}
+
+.hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 48rem) {
+  .hero__image {
+    aspect-ratio: 1460 / 600;
+  }
 }
 
 .hero__content {
