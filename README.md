@@ -14,7 +14,6 @@ This is a solution to the [News homepage challenge on Frontend Mentor](https://w
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -32,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://deluxe-cat-9a74f2.netlify.app/)
 
 ## My process
 
@@ -98,6 +97,16 @@ git push origin --tags
 
 The process helped me understand how to use git-flow and how to use it in a project.
 It helped in handling the branches and merging them correctly.
+
+**Performance:**  
+I also tried to improve performance of the solution by following the lighthouse recommendations.
+
+- I added a preload link for the hero image.
+- I converted all images to webp format and used the srcset attribute to serve the appropriate image for the screen size.
+
+This helped reduce content layout shifts and largest contentful paint which are the two main performance issues I had.
+
+I also added several meta tags to improve SEO and social media sharing.
 
 ### Continued development
 
