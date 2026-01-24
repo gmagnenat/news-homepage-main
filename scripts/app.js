@@ -8,7 +8,6 @@ function setupEventListeners() {
   closeNavigationBtn?.addEventListener("click", closeMobileNavigation);
   mobileNavigation?.addEventListener("keydown", handleKeyDown);
   mobileNavigation?.addEventListener("click", handleDialogClick);
-  f;
 }
 
 function handleDialogClick(e) {
