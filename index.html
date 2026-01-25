@@ -90,26 +90,13 @@
           />
         </svg>
       </a>
-      <nav class="main-navigation">
-        <ul class="main-navigation__list">
-          <li class="main-navigation__list-item">
-            <a class="main-navigation__link" href="#">Home</a>
-          </li>
-          <li class="main-navigation__list-item">
-            <a class="main-navigation__link" href="#">New</a>
-          </li>
-          <li class="main-navigation__list-item">
-            <a class="main-navigation__link" href="#">Popular</a>
-          </li>
-          <li class="main-navigation__list-item">
-            <a class="main-navigation__link" href="#">Trending</a>
-          </li>
-          <li class="main-navigation__list-item">
-            <a class="main-navigation__link" href="#">Categories</a>
-          </li>
-        </ul>
-      </nav>
-      <button type="button" class="open-navigation" aria-label="Open menu">
+      <button
+        type="button"
+        class="open-navigation"
+        aria-label="Open navigation"
+        aria-controls="site-navigation"
+        aria-expanded="false"
+      >
         <svg
           focusable="false"
           aria-hidden="true"
@@ -123,33 +110,44 @@
           </g>
         </svg>
       </button>
-    </header>
-
-    <dialog class="mobile-navigation">
-      <button type="button" class="close-navigation" aria-label="Close menu">
-        <svg
-          focusable="false"
-          aria-hidden="true"
-          width="32"
-          height="31"
-          xmlns="http://www.w3.org/2000/svg"
+      <nav id="site-navigation" class="navigation" data-open="false">
+        <button
+          type="button"
+          class="close-navigation"
+          aria-label="Close navigation"
         >
-          <g fill="#00001A" fill-rule="evenodd">
-            <path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z" />
-            <path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z" />
-          </g>
-        </svg>
-      </button>
-      <ul class="mobile-navigation__list">
-        <li class="mobile-navigation__list-item"><a href="#">Home</a></li>
-        <li class="mobile-navigation__list-item"><a href="#">New</a></li>
-        <li class="mobile-navigation__list-item"><a href="#">Popular</a></li>
-        <li class="mobile-navigation__list-item"><a href="#">Trending</a></li>
-        <li class="mobile-navigation__list-item">
-          <a href="#">Categories</a>
-        </li>
-      </ul>
-    </dialog>
+          <svg
+            focusable="false"
+            aria-hidden="true"
+            width="32"
+            height="31"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g fill="#00001A" fill-rule="evenodd">
+              <path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z" />
+              <path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z" />
+            </g>
+          </svg>
+        </button>
+        <ul class="navigation__list">
+          <li class="navigation__list-item">
+            <a class="navigation__link" href="#">Home</a>
+          </li>
+          <li class="navigation__list-item">
+            <a class="navigation__link" href="#">New</a>
+          </li>
+          <li class="navigation__list-item">
+            <a class="navigation__link" href="#">Popular</a>
+          </li>
+          <li class="navigation__list-item">
+            <a class="navigation__link" href="#">Trending</a>
+          </li>
+          <li class="navigation__list-item">
+            <a class="navigation__link" href="#">Categories</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <main class="main">
       <section class="hero">
@@ -305,5 +303,6 @@
         </ol>
       </section>
     </main>
+    <div class="backdrop" hidden></div>
   </body>
 </html>
