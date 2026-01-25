@@ -116,86 +116,92 @@ a {
   justify-content: space-between;
 }
 
-.main-navigation {
-  display: none;
-
-  @media screen and (min-width: 69rem) {
-    display: flex;
-  }
-}
-
-.main-navigation__list {
-  display: flex;
-  gap: 2.5rem;
-}
-
-.main-navigation__link {
-  &:hover {
-    color: var(--clr-soft-red);
-  }
-}
-
-.mobile-navigation {
+.navigation {
   border: none;
   margin-inline-start: auto;
   overflow-y: auto;
-  min-width: 16rem;
+  min-width: 0;
   min-height: 100vh;
-
-  left: auto;
-
-  @media screen and (min-width: 69rem) {
-    display: none;
-  }
+  width: 0;
+  background: white;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 0;
 }
 
-.mobile-navigation__list {
+.navigation[data-open="true"] {
+  width: auto;
+  min-width: 16rem;
+}
+
+.navigation__list {
   margin-block-start: var(--spacing-large);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.mobile-navigation__list-item {
+.navigation__list-item {
   font-size: 1.125rem;
 }
 
-.mobile-navigation--open {
+.navigation--open {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 .open-navigation {
-  border: transparent;
   background: none;
-  cursor: pointer;
-
-  @media screen and (min-width: 69rem) {
-    display: none;
-  }
+  border: transparent;
 }
 
 .close-navigation {
   background: none;
+  display: none;
   border: transparent;
   margin-inline-start: auto;
+  position: relative;
+  top: 3rem;
+  right: 1rem;
   svg {
     pointer-events: none;
   }
 }
 
-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
-
-.mobile-navigation__list {
+.navigation__list {
   margin-block-start: var(--spacing-large);
   padding-inline: var(--spacing-small);
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 99;
+}
+@media screen and (min-width: 60rem) {
+  .navigation {
+    position: relative;
+    min-height: auto;
+    width: auto;
+  }
+
+  .navigation__list {
+    flex-direction: row;
+    margin-block-start: 0;
+  }
+  .open-navigation {
+    display: none;
+  }
+  .close-navigation {
+    display: none;
+  }
 }
 
 /* ----------------------------------------------- */
