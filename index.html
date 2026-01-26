@@ -150,7 +150,8 @@
     </header>
 
     <main class="main">
-      <section class="hero">
+      <h1 class="visually-hidden">News home</h1>
+      <section class="hero" aria-label="featured post" role="region">
         <picture class="hero__image">
           <source
             srcset="assets/images/image-web-3-desktop.webp"
@@ -173,9 +174,9 @@
           />
         </picture>
         <div class="hero__content">
-          <h1 id="hero-title" class="hero__title">
+          <h2 id="hero-title" class="hero__title">
             The Bright Future of Web 3.0?
-          </h1>
+          </h2>
           <p class="hero__body">
             We dive into the next evolution of the web that claims to put the
             power of the platforms back into the hands of the people. But is it
@@ -184,13 +185,15 @@
           <a class="btn btn--primary hero__btn" href="#"
             >Read more
             <span class="visually-hidden"
-              >about the Bright Future of Web 3.0?</span
+              >- the Bright Future of Web 3.0?</span
             ></a
           >
         </div>
       </section>
-      <section class="news-section">
-        <h2 class="news-section__title">New</h2>
+      <section class="news-section" aria-labelledby="news-section-title" role="region">
+        <h2 id="news-section-title" class="news-section__title">
+          New <span class="visually-hidden">articles</span>
+        </h2>
         <ul class="news-section__list">
           <li class="news-section__list-item">
             <h3 class="news-section__article-title">
@@ -226,12 +229,16 @@
           </li>
         </ul>
       </section>
-      <section class="feature-section" aria-labelledby="feature-section-title">
+      <section
+        class="feature-section"
+        aria-labelledby="feature-section-title"
+        role="region"
+      >
         <h2
           id="feature-section-title"
           class="feature-section__title visually-hidden"
         >
-          Featured articles
+          Most popular
         </h2>
         <ol class="feature-section__list">
           <li class="feature-section__list-item">
@@ -243,7 +250,7 @@
               <img
                 class="feature-section__article-image"
                 src="assets/images/image-retro-pcs.jpg"
-                alt=""
+                alt="old computer keyboard, gameboy, joystick, tapes and a mechanical keyboard in a purple light atmosphere"
               />
             </picture>
             <div class="feature-section__content">
@@ -265,7 +272,7 @@
               <img
                 class="feature-section__article-image"
                 src="assets/images/image-top-laptops.jpg"
-                alt=""
+                alt="close up of a black keybord with red keys backlighting"
               />
             </picture>
             <div class="feature-section__content">
@@ -287,7 +294,7 @@
               <img
                 class="feature-section__article-image"
                 src="assets/images/image-gaming-growth.jpg"
-                alt=""
+                alt="a console controller levitating above an open hand"
               />
             </picture>
             <div class="feature-section__content">
